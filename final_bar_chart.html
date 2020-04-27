@@ -1,0 +1,35 @@
+<html>
+  <head>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load('current', {'packages':['bar']});
+      google.charts.setOnLoadCallback(drawChart);
+
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+['Year', 'No Digital Mammography Access within 20 minute drive from 2010-2014', 'Digital Mammography Access within 20 minute drie'],
+['2010', 3521, 60662],
+['2011', 2079, 62081],
+['2012', 1169, 62928],
+['2013', 734, 63385],
+['2014', 498, 63580]
+        ]);
+
+        var options = {
+          chart: {
+            title: 'U.S. Digital Mammography Access',
+            subtitle: 'Access within a 20 minute drive',
+          },
+          bars: 'vertical' // Required for Material Bar Charts.
+        };
+
+        var chart = new google.charts.Bar(document.getElementById('barchart_material'));
+
+        chart.draw(data, google.charts.Bar.convertOptions(options));
+      }
+    </script>
+  </head>
+  <body>
+    <div id="barchart_material" style="width: 900px; height: 500px;"></div>
+  </body>
+</html>
